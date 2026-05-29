@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canadian Rockies Family Trip — June 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f0;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a3a4a 0%, #2d6a8a 100%);
+      color: white;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    header .subtitle {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin-bottom: 24px;
+    }
+
+    .trip-meta {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .trip-meta div {
+      background: rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+
+    .trip-meta div span {
+      display: block;
+      font-size: 0.7rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0 24px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #2d6a8a;
+      text-decoration: none;
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    nav a:hover { border-bottom-color: #2d6a8a; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 16px;
+    }
+
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #1a3a4a;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #2d6a8a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .section-num {
+      background: #2d6a8a;
+      color: white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    /* Schedule table */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .schedule-table th {
+      background: #1a3a4a;
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    .schedule-table th:first-child { border-radius: 6px 0 0 0; }
+    .schedule-table th:last-child { border-radius: 0 6px 0 0; }
+
+    .schedule-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+
+    .schedule-table tr:last-child td { border-bottom: none; }
+    .schedule-table tr:nth-child(even) td { background: #f9f9f7; }
+
+    .time-cell {
+      font-weight: 600;
+      color: #2d6a8a;
+      white-space: nowrap;
+      width: 90px;
+    }
+
+    .activity-name {
+      font-weight: 600;
+      color: #1a3a4a;
+    }
+
+    .activity-notes {
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    /* Day cards */
+    .day-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .day-header {
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .day-number {
+      background: #2d6a8a;
+      color: white;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .day-title { font-size: 1.1rem; font-weight: 700; color: #1a3a4a; }
+    .day-subtitle { font-size: 0.85rem; color: #888; margin-top: 2px; }
+
+    .day-body { padding: 0 24px 20px; }
+
+    .time-block-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #aaa;
+      margin: 16px 0 8px;
+    }
+
+    .star { color: #f5a623; }
+
+    /* Location colors */
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .badge-banff { background: #e8f4f8; color: #1a6a8a; }
+    .badge-golden { background: #fdf0e0; color: #a05c00; }
+    .badge-calgary { background: #f0e8f8; color: #6a1a8a; }
+
+    .day-summary {
+      background: #f9f9f7;
+      border-top: 1px solid #f0f0f0;
+      padding: 12px 24px;
+      font-size: 0.82rem;
+      color: #666;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .day-summary strong { color: #1a3a4a; }
+
+    /* Info grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .info-item {
+      background: white;
+      border-radius: 10px;
+      padding: 18px 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .info-item h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .info-item p, .info-item li {
+      font-size: 0.88rem;
+      color: #444;
+      margin-bottom: 4px;
+    }
+
+    .info-item ul { list-style: none; }
+    .info-item li::before { content: "→ "; color: #2d6a8a; }
+
+    /* Checklist */
+    .checklist { list-style: none; }
+    .checklist li {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .checklist li:last-child { border-bottom: none; }
+
+    .check-box {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .check-box.done {
+      background: #2d6a8a;
+      border-color: #2d6a8a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 13px;
+    }
+
+    .checklist-urgent .check-box { border-color: #e05c2d; }
+
+    .checklist li strong { color: #1a3a4a; }
+    .checklist li .check-meta { font-size: 0.8rem; color: #888; margin-top: 2px; }
+
+    /* Addie schedule */
+    .addie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .addie-slot {
+      background: white;
+      border-radius: 8px;
+      padding: 12px 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      font-size: 0.88rem;
+    }
+
+    .addie-slot .times {
+      font-weight: 700;
+      color: #2d6a8a;
+      font-size: 0.82rem;
+      margin-bottom: 2px;
+    }
+
+    .addie-slot .label { color: #444; }
+
+    .addie-note {
+      background: #fff8e6;
+      border-left: 3px solid #f5a623;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 12px;
+    }
+
+    /* Budget table */
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .budget-table th {
+      background: #1a3a4a;
+      color: white;
+      padding: 10px 16px;
+      text-align: left;
+    }
+
+    .budget-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .budget-table tr:last-child td {
+      font-weight: 700;
+      color: #1a3a4a;
+      background: #f0f4f7;
+      border-bottom: none;
+    }
+
+    /* Quick ref */
+    .quick-ref {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .ref-card {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .ref-card h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #2d6a8a;
+      margin-bottom: 6px;
+    }
+
+    .ref-card p { font-size: 0.85rem; color: #444; }
+
+    .emergency { border-left: 3px solid #e05c2d; }
+    .emergency h4 { color: #e05c2d; }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: #aaa;
+      font-size: 0.8rem;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .trip-meta { gap: 12px; }
+      .day-header { padding: 12px 16px; }
+      .day-body { padding: 0 16px 16px; }
+      .day-summary { padding: 10px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🏔 Canadian Rockies Family Trip</h1>
+  <p class="subtitle">Joey · Meghan · Addie (12–16 weeks)</p>
+  <div class="trip-meta">
+    <div><span>Dates</span>June 8–16, 2026</div>
+    <div><span>Route</span>Calgary → Banff → Golden → Calgary</div>
+    <div><span>Duration</span>8 Days</div>
+    <div><span>Currency</span>CAD ($1 ≈ $0.73 USD)</div>
+  </div>
+</header>
+
+<nav>
+  <a href="#addie">Addie's Schedule</a>
+  <a href="#logistics">Logistics</a>
+  <a href="#itinerary">Day by Day</a>
+  <a href="#practical">Practical</a>
+  <a href="#budget">Budget</a>
+  <a href="#checklist">Checklist</a>
+  <a href="#quickref">Quick Ref</a>
+</nav>
+
+<div class="container">
+
+  <!-- ADDIE'S SCHEDULE -->
+  <section id="addie">
+    <h2><span class="section-num">♡</span> Addie's Daily Schedule (ET → MT)</h2>
+    <div class="addie-grid">
+      <div class="addie-slot">
+        <div class="times">5:00am MT · 7:00am ET</div>
+        <div class="label">Wake + First Feed</div>
+      </div>
+      <div class="addie-slot">
+        <div class="times">6:30am MT · 8:30am ET</div>
+        <div class="label">Nap 1 (~90 min)</div>
+      </div>
+      <div class="addie-slot">
+        <div class="times">8:00am MT · 10:00am ET</div>
+        <div class="label">Awake Window</div>
+      </div>
+      <div class="addie-slot">
+        <div class="times">9:30am MT · 11:30am ET</div>
+        <div class="label">Nap 2 (~90 min)</div>
+      </div>
+      <div class="addie-slot">
+        <div class="times">11:00am MT · 1:00pm ET</div>
+        <div class="label">Awake Window</div>
+      </div>
+      <div class="addie-slot">
+        <div class="times">12:30pm MT · 2:30pm ET</div>
+        <div class="label">Nap 3 (~90 min)</div>
+      </div>
+      <div class="addie-slot">
+        <div class="times">2:00pm MT · 4:00pm ET</div>
+        <div class="label">Awake Window</div>
+      </div>
+      <div class="addie-slot">
+        <div class="times">5:00pm MT · 7:00pm ET</div>
+        <div class="label">Bedtime</div>
+      </div>
+    </div>
+    <div class="addie-note">
+      <strong>Best activity windows (MT):</strong> 8–9:30am · 11am–12:30pm · 2–5pm<br>
+      <strong>Pro tip:</strong> Use drives strategically — Addie naps great in the car. Plan long drives to overlap nap windows.
+    </div>
+  </section>
+
+  <!-- LOGISTICS -->
+  <section id="logistics">
+    <h2><span class="section-num">1</span> Logistics</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <h3>Flights</h3>
+        <ul>
+          <li>Arrive YYC: June 8, 11:00am MT</li>
+          <li>Depart YYC: June 16, 7:00am MT</li>
+          <li>Leave hotel by 4:30am June 16</li>
+        </ul>
+      </div>
+      <div class="info-item">
+        <h3>Accommodations</h3>
+        <ul>
+          <li>Sulphur Cabin · 124 Spray Ave, Banff · June 8–11</li>
+          <li>Hiked Cabin · 606 7th St N #404, Golden · June 11–14</li>
+          <li>The Dorian Hotel · Calgary · June 14–15</li>
+        </ul>
+      </div>
+      <div class="info-item">
+        <h3>Key Drive Times</h3>
+        <ul>
+          <li>YYC → Banff: 1hr 30min</li>
+          <li>Banff → Johnston Canyon: 30min</li>
+          <li>Banff → Moraine Lake: 60min</li>
+          <li>Banff → Peyto Lake: 90min</li>
+          <li>Banff → Golden: 2hrs</li>
+          <li>Golden → Takakkaw Falls: 45min</li>
+          <li>Golden → Rogers Pass: 60min</li>
+          <li>Golden → Calgary: 3.5hrs</li>
+        </ul>
+      </div>
+      <div class="info-item">
+        <h3>Parks Canada Pass</h3>
+        <p>~$75 CAD/adult · covers all national parks</p>
+        <p style="margin-top:6px"><a href="https://reservation.pc.gc.ca" style="color:#2d6a8a">reservation.pc.gc.ca</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section id="itinerary">
+    <h2><span class="section-num">2</span> Day-by-Day Itinerary</h2>
+
+    <!-- DAY 1 -->
+    <div class="day-card">
+      <div class="day-header" style="background:#e8f4f8;">
+        <div class="day-number">1</div>
+        <div>
+          <div class="day-title">June 8 — Arrive + Settle <span class="badge badge-banff">Banff</span></div>
+          <div class="day-subtitle">Calgary → Banff · Bow Falls</div>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="time-block-label">Afternoon</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">11:00am</td>
+              <td><div class="activity-name">Land YYC — Rental Car</div><div class="activity-notes">Pick up rental car at airport</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">12:30pm</td>
+              <td><div class="activity-name">Arrive Banff</div><div class="activity-notes">Lunch in town before 3pm check-in · Whitebark Café or Eddie Burger + Bar</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">3:00pm</td>
+              <td><div class="activity-name">Check In — Sulphur Cabin</div><div class="activity-notes">124 Spray Ave, Banff</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">4:00pm</td>
+              <td><div class="activity-name">🌊 Bow Falls</div><div class="activity-notes">10min walk from cabin · flat · stroller-friendly · beautiful intro to the Rockies</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5:00pm</td>
+              <td><div class="activity-name">Addie Bedtime</div><div class="activity-notes">Dinner at cabin or Earls Banff</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="day-summary">
+        <div><strong>Driving:</strong> ~1.5hrs</div>
+        <div><strong>Effort:</strong> Easy arrival day</div>
+        <div><strong>Advance tickets:</strong> None</div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-card">
+      <div class="day-header" style="background:#e8f4f8;">
+        <div class="day-number">2</div>
+        <div>
+          <div class="day-title">June 9 — Johnston Canyon + Icefields Parkway <span class="badge badge-banff">Banff</span> <span class="star">★★</span></div>
+          <div class="day-subtitle">Lower Falls · Bow Lake · Peyto Lake · Surprise Corner</div>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="time-block-label">Early Morning</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">5:00am</td>
+              <td><div class="activity-name">Addie Up + First Feed</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">6:00am</td>
+              <td><div class="activity-name">Drive to Johnston Canyon</div><div class="activity-notes">30min · Addie naps in car (Nap 1)</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">6:30am</td>
+              <td><div class="activity-name">🏞 Johnston Canyon — Lower Falls</div><div class="activity-notes">2.4km · catwalks along cliff face · baby in carrier · arrive before crowds · spectacular</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">8:15am</td>
+              <td><div class="activity-name">Drive North on Icefields Parkway (Hwy 93N)</div><div class="activity-notes">~75min to Bow Lake · Addie naps in car (Nap 2)</div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="time-block-label">Mid-Morning</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">9:30am</td>
+              <td><div class="activity-name">🏔 Bow Lake</div><div class="activity-notes">Roadside pullout · short flat walk to lakeside · glacier reflections · stroller or carrier</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:15am</td>
+              <td><div class="activity-name">🏔 Peyto Lake — Upper Viewpoint</div><div class="activity-notes">0.8km · most dramatic lake view in the Rockies · electric blue water · baby in carrier</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">11:15am</td>
+              <td><div class="activity-name">Drive back to Banff</div><div class="activity-notes">~60min · Addie naps in car (Nap 3)</div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="time-block-label">Afternoon</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">12:30pm</td>
+              <td><div class="activity-name">Cabin Lunch + Rest</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">2:00pm</td>
+              <td><div class="activity-name">📸 Surprise Corner Viewpoint</div><div class="activity-notes">5min walk from cabin · iconic Fairmont Banff Springs view</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">2:30pm</td>
+              <td><div class="activity-name">🌿 Cascade Ponds</div><div class="activity-notes">1km flat loop · picnic tables · mountain backdrop · stroller-friendly</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">3:30pm</td>
+              <td><div class="activity-name">Banff Ave Stroll</div><div class="activity-notes">Shops, coffee, decompress</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5:00pm</td>
+              <td><div class="activity-name">Addie Bedtime</div><div class="activity-notes">Dinner at Coyotes Southwestern Grill or Park Distillery</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="day-summary">
+        <div><strong>Driving:</strong> ~3hrs (overlap nap windows)</div>
+        <div><strong>Tip:</strong> Johnston Canyon before 7am = nearly empty</div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-card">
+      <div class="day-header" style="background:#fff3e0;">
+        <div class="day-number">3</div>
+        <div>
+          <div class="day-title">June 10 — Moraine Lake + Lake Louise <span class="badge badge-banff">Banff</span> <span class="star">★★★</span></div>
+          <div class="day-subtitle">Rockies Journey Shuttle · Valley of the Ten Peaks · Lake Louise Lakeshore</div>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="time-block-label">Morning — Rockies Journey Shuttle</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">5:00am</td>
+              <td><div class="activity-name">Addie Up + First Feed</div><div class="activity-notes">Pack: carrier · snacks · warm layers (35–45°F at the lakes)</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">6:00am</td>
+              <td><div class="activity-name">Walk to Banff Train Station</div><div class="activity-notes">~20min with stroller · or drive 5min + park free</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">6:30am</td>
+              <td><div class="activity-name">Check In — Rockies Journey</div><div class="activity-notes">Banff Train Station bus stop · arrive 10min early</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">7:00am</td>
+              <td><div class="activity-name">🚌 Shuttle Departs</div><div class="activity-notes">Rockies Journey · $80/person · Addie FREE · hot drinks included</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">8:10am</td>
+              <td><div class="activity-name">🏔 Arrive Moraine Lake</div><div class="activity-notes">Valley of the Ten Peaks</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">8:10am</td>
+              <td><div class="activity-name">⭐ Rockpile Viewpoint</div><div class="activity-notes">Short scramble · most iconic view in Canada · baby in carrier · take your time</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">8:45am</td>
+              <td><div class="activity-name">Moraine Lake Shoreline Walk</div><div class="activity-notes">Flat · turquoise water · peaceful at this hour</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:00am</td>
+              <td><div class="activity-name">Shuttle to Lake Louise</div><div class="activity-notes">~25min</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:30am</td>
+              <td><div class="activity-name">🏔 Lake Louise Lakeshore Trail</div><div class="activity-notes">4km flat out-and-back · stroller-friendly · Victoria Glacier backdrop</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">12:00pm</td>
+              <td><div class="activity-name">Lunch at Lake Louise</div><div class="activity-notes">Packed lunch or café at Fairmont Chateau Lake Louise</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">12:30pm</td>
+              <td><div class="activity-name">Return Shuttle to Banff</div><div class="activity-notes">Addie naps in shuttle (Nap 3)</div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="time-block-label">Afternoon</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">1:30pm</td>
+              <td><div class="activity-name">Cabin Rest</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">3:00pm</td>
+              <td><div class="activity-name">🚗 Lake Minnewanka Scenic Drive</div><div class="activity-notes">10min from cabin · drive along the lake · shoreline walk · massive mountain lake</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5:00pm</td>
+              <td><div class="activity-name">Addie Bedtime</div><div class="activity-notes">Dinner at Three Bears Brewery or Ox &amp; Angela</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="day-summary">
+        <div><strong>Shuttle:</strong> Rockies Journey · $160 CAD total · Addie free</div>
+        <div><strong>Book:</strong> <a href="https://rockiesjourney.ca" style="color:#2d6a8a">rockiesjourney.ca</a> · +1 (825) 883-3403</div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-card">
+      <div class="day-header" style="background:#e8f4f8;">
+        <div class="day-number">4</div>
+        <div>
+          <div class="day-title">June 11 — Check Out → Golden <span class="badge badge-banff">Banff</span> → <span class="badge badge-golden">Golden</span></div>
+          <div class="day-subtitle">Bow River Trail · Drive to Golden · Kicking Horse Bridge</div>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="time-block-label">Morning — Banff</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">5:00am</td>
+              <td><div class="activity-name">Addie Up + First Feed</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">6:00am</td>
+              <td><div class="activity-name">🌿 Bow River Trail</div><div class="activity-notes">Flat · stroller · peaceful morning walk · wildlife possible</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">7:30am</td>
+              <td><div class="activity-name">Breakfast + Pack Cabin</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:00am</td>
+              <td><div class="activity-name">Check Out — Sulphur Cabin</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:15am</td>
+              <td><div class="activity-name">Drive to Golden</div><div class="activity-notes">~2hrs via Trans-Canada Hwy 1 · Addie naps in car</div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="time-block-label">Afternoon — Golden</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">12:15pm</td>
+              <td><div class="activity-name">Arrive Golden · Check In</div><div class="activity-notes">606 7th St N #404</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">12:30pm</td>
+              <td><div class="activity-name">Addie Nap</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">2:30pm</td>
+              <td><div class="activity-name">🌉 Kicking Horse Pedestrian Bridge</div><div class="activity-notes">Downtown · 5min walk · longest free-standing timber frame bridge in Canada · river views · stroller</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">3:30pm</td>
+              <td><div class="activity-name">Downtown Golden Stroll</div><div class="activity-notes">Groceries, coffee, explore</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5:00pm</td>
+              <td><div class="activity-name">Addie Bedtime</div><div class="activity-notes">Cook dinner in cabin</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="day-summary">
+        <div><strong>Driving:</strong> ~2hrs</div>
+        <div><strong>Note:</strong> Intentionally light — transition day</div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-card">
+      <div class="day-header" style="background:#fdf0e0;">
+        <div class="day-number">5</div>
+        <div>
+          <div class="day-title">June 12 — Yoho National Park <span class="badge badge-golden">Golden</span> <span class="star">★★</span></div>
+          <div class="day-subtitle">Takakkaw Falls · Emerald Lake · Kicking Horse Gondola</div>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="time-block-label">Early Morning — Yoho NP</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">5:00am</td>
+              <td><div class="activity-name">Addie Up + First Feed</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">6:00am</td>
+              <td><div class="activity-name">Drive to Takakkaw Falls</div><div class="activity-notes">45min · Addie naps in car (Nap 1)</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">6:45am</td>
+              <td><div class="activity-name">💧 Takakkaw Falls</div><div class="activity-notes">One of Canada's tallest waterfalls · short flat walk · thundering cascade · jaw-dropping at dawn · baby in carrier or stroller</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">8:00am</td>
+              <td><div class="activity-name">Drive to Emerald Lake</div><div class="activity-notes">20min</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">8:30am</td>
+              <td><div class="activity-name">🌿 Emerald Lake Loop</div><div class="activity-notes">5.2km flat loop · impossibly green water · mirror reflections · stroller-friendly · among the most beautiful lakes on earth</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:30am</td>
+              <td><div class="activity-name">Meeting of the Waters</div><div class="activity-notes">Quick roadside stop · scenic river confluence</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">11:30am</td>
+              <td><div class="activity-name">Drive back to Golden</div><div class="activity-notes">45min · Addie naps in car (Nap 3)</div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="time-block-label">Afternoon</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">12:30pm</td>
+              <td><div class="activity-name">Cabin Lunch + Addie Nap</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">2:30pm</td>
+              <td><div class="activity-name">🚠 Kicking Horse Mountain Resort Gondola</div><div class="activity-notes">10min drive · rides to 2,350m · panoramic Columbia Valley views · zero hiking · baby in carrier · unreal scenery</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5:00pm</td>
+              <td><div class="activity-name">Addie Bedtime</div><div class="activity-notes">Dinner at The Island Restaurant or Eleven22</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="day-summary">
+        <div><strong>Gondola:</strong> ~$60 CAD/person · <a href="https://kickinghorseresort.com" style="color:#2d6a8a">kickinghorseresort.com</a></div>
+        <div><strong>Driving:</strong> ~2.5hrs total</div>
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day-card">
+      <div class="day-header" style="background:#fdf0e0;">
+        <div class="day-number">6</div>
+        <div>
+          <div class="day-title">June 13 — Glacier National Park <span class="badge badge-golden">Golden</span></div>
+          <div class="day-subtitle">Rogers Pass · Discovery Centre · Golden Pool</div>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="time-block-label">Morning — Rogers Pass</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">5:00am</td>
+              <td><div class="activity-name">Addie Up</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">7:00am</td>
+              <td><div class="activity-name">Drive to Rogers Pass</div><div class="activity-notes">1hr · Glacier NP · Addie naps in car</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">8:00am</td>
+              <td><div class="activity-name">🏔 Rogers Pass Discovery Centre</div><div class="activity-notes">Dramatic mountain pass · interpretive trails · roadside glacier views · waterfalls · stroller-friendly</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:00am</td>
+              <td><div class="activity-name">Drive back to Golden</div><div class="activity-notes">1hr · Addie naps in car</div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="time-block-label">Afternoon</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">12:00pm</td>
+              <td><div class="activity-name">Cabin Lunch + Addie Nap</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">2:30pm</td>
+              <td><div class="activity-name">🏊 Golden Outdoor Pool + Spray Park</div><div class="activity-notes">In town · shallow pool · waterslide · mountain views</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5:00pm</td>
+              <td><div class="activity-name">Addie Bedtime</div><div class="activity-notes">Dinner at Bacchus Books &amp; Café or Mad Dog BBQ</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="day-summary">
+        <div><strong>Driving:</strong> ~2hrs · intentional recovery day</div>
+      </div>
+    </div>
+
+    <!-- DAY 7 -->
+    <div class="day-card">
+      <div class="day-header" style="background:#f0e8f8;">
+        <div class="day-number">7</div>
+        <div>
+          <div class="day-title">June 14 — Golden → Calgary <span class="badge badge-golden">Golden</span> → <span class="badge badge-calgary">Calgary</span></div>
+          <div class="day-subtitle">Optional Emerald Lake · Drive to Calgary · Calgary Zoo</div>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="time-block-label">Morning</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">5:00am</td>
+              <td><div class="activity-name">Addie Up</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">7:00am</td>
+              <td><div class="activity-name">Optional: Emerald Lake Redux</div><div class="activity-notes">45min drive · genuinely worth seeing twice · or skip and drive direct to Calgary</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">9:00am</td>
+              <td><div class="activity-name">Drive to Calgary</div><div class="activity-notes">~3.5hrs (or 2.5hrs if skipping Emerald Lake) · Addie naps in car</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">12:30pm</td>
+              <td><div class="activity-name">Arrive Calgary · Check In</div><div class="activity-notes">The Dorian Hotel · 325 4 Ave SW, Calgary</div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="time-block-label">Afternoon</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">2:00pm</td>
+              <td><div class="activity-name">🦁 Calgary Zoo</div><div class="activity-notes">World-class · stroller-friendly · easy walking · great with baby</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5:00pm</td>
+              <td><div class="activity-name">Addie Bedtime</div><div class="activity-notes">Dinner near The Dorian</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="day-summary">
+        <div><strong>Driving:</strong> 2.5–3.5hrs</div>
+        <div><strong>Hotel:</strong> The Dorian · 325 4 Ave SW, Calgary · ~20min to YYC</div>
+      </div>
+    </div>
+
+    <!-- DAY 8 -->
+    <div class="day-card">
+      <div class="day-header" style="background:#f0e8f8;">
+        <div class="day-number">8</div>
+        <div>
+          <div class="day-title">June 15 — Calgary + Early Night <span class="badge badge-calgary">Calgary</span></div>
+          <div class="day-subtitle">Heritage Park · 17th Ave · Early Night Before Departure</div>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="time-block-label">Morning / Afternoon</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Activity</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">5:00am</td>
+              <td><div class="activity-name">Addie Up</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">8:00am</td>
+              <td><div class="activity-name">🏛 Heritage Park Historical Village</div><div class="activity-notes">Canada's largest living history museum · on a lake · stroller-friendly</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">12:00pm</td>
+              <td><div class="activity-name">Lunch on 17th Ave</div><div class="activity-notes">Calgary's best food street</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">2:30pm</td>
+              <td><div class="activity-name">Pack + Errands + Relax</div></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5:00pm</td>
+              <td><div class="activity-name">Addie Bedtime</div><div class="activity-notes">Early dinner · bags by door · alarms set</div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="time-block-label">June 16 — Departure</div>
+        <table class="schedule-table">
+          <thead><tr><th>Time (MT)</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td class="time-cell">4:00am</td><td><div class="activity-name">Wake Up</div></td></tr>
+            <tr><td class="time-cell">4:30am</td><td><div class="activity-name">Drive to YYC</div><div class="activity-notes">~20min from The Dorian</div></td></tr>
+            <tr><td class="time-cell">5:00am</td><td><div class="activity-name">Check In + Security</div></td></tr>
+            <tr><td class="time-cell">7:00am</td><td><div class="activity-name">✈️ Flight Departs — See you Atlanta!</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICAL -->
+  <section id="practical">
+    <h2><span class="section-num">3</span> Practical Information</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <h3>Money</h3>
+        <ul>
+          <li>Currency: CAD ($1 ≈ $0.73 USD)</li>
+          <li>Credit cards accepted everywhere</li>
+          <li>Tipping: 18–20% standard</li>
+          <li>ATMs widely available in town</li>
+        </ul>
+      </div>
+      <div class="info-item">
+        <h3>Baby Gear — What to Bring Daily</h3>
+        <ul>
+          <li>Carrier — essential for Moraine Lake, Takakkaw Falls, Rogers Pass</li>
+          <li>Stroller — Bow River, Lake Louise, Emerald Lake, Cascade Ponds</li>
+          <li>Warm layers for Addie (lakes are 35–50°F mornings)</li>
+          <li>Sunscreen (high elevation = stronger UV)</li>
+          <li>Carrier rain cover</li>
+        </ul>
+      </div>
+      <div class="info-item">
+        <h3>Cell Coverage</h3>
+        <ul>
+          <li>Good in Banff and Golden towns</li>
+          <li>Drops on Icefields Parkway + Yoho NP</li>
+          <li>Download offline maps before each morning</li>
+          <li>Google Maps or Maps.me recommended</li>
+        </ul>
+      </div>
+      <div class="info-item">
+        <h3>Weather (June)</h3>
+        <ul>
+          <li>Banff town: 55–70°F daytime</li>
+          <li>Lakes + trailheads: 35–50°F mornings</li>
+          <li>Layer everything — changes fast</li>
+          <li>Rain jacket always in the bag</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUDGET -->
+  <section id="budget">
+    <h2><span class="section-num">4</span> Budget Summary</h2>
+    <div class="card">
+      <table class="budget-table">
+        <thead>
+          <tr><th>Category</th><th>CAD</th><th>USD (~)</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Parks Canada Discovery Pass</td><td>$150</td><td>$110</td><td>$75/adult · all national parks</td></tr>
+          <tr><td>Rockies Journey Shuttle</td><td>$160</td><td>$117</td><td>$80 × 2 adults · Addie free</td></tr>
+          <tr><td>Kicking Horse Gondola</td><td>$120</td><td>$88</td><td>~$60/person</td></tr>
+          <tr><td>Activities (misc)</td><td>$200</td><td>$146</td><td>Calgary Zoo, pool, etc.</td></tr>
+          <tr><td>Food</td><td>$900</td><td>$657</td><td>~$150/day × 8 days</td></tr>
+          <tr><td>Gas</td><td>$150</td><td>$110</td><td>Full trip estimate</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>~$1,680</strong></td><td><strong>~$1,228</strong></td><td>Accommodation not included</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section id="checklist">
+    <h2><span class="section-num">5</span> Booking Checklist</h2>
+    <div class="card">
+      <ul class="checklist">
+        <li class="checklist-urgent">
+          <div class="check-box"></div>
+          <div>
+            <strong>Rockies Journey Shuttle</strong> — June 10, 7:00am departure
+            <div class="check-meta"><a href="https://rockiesjourney.ca" style="color:#2d6a8a">rockiesjourney.ca</a> · +1 (825) 883-3403 · info@rockiesjourney.ca</div>
+          </div>
+        </li>
+        <li class="checklist-urgent">
+          <div class="check-box"></div>
+          <div>
+            <strong>Parks Canada Discovery Pass</strong>
+            <div class="check-meta"><a href="https://reservation.pc.gc.ca" style="color:#2d6a8a">reservation.pc.gc.ca</a> · $75 CAD/adult</div>
+          </div>
+        </li>
+        <li class="checklist-urgent">
+          <div class="check-box"></div>
+          <div>
+            <strong>Kicking Horse Gondola</strong> — June 12 afternoon
+            <div class="check-meta"><a href="https://kickinghorseresort.com" style="color:#2d6a8a">kickinghorseresort.com</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="check-box done">✓</div>
+          <div>
+            <strong>The Dorian Hotel, Calgary</strong> — June 14–15
+            <div class="check-meta">325 4 Ave SW, Calgary · ~20min to YYC ✅</div>
+          </div>
+        </li>
+        <li>
+          <div class="check-box"></div>
+          <div>
+            <strong>Lake Minnewanka Cruise</strong> — June 10 afternoon (optional)
+            <div class="check-meta"><a href="https://www.banfflakelouise.com" style="color:#2d6a8a">banfflakelouise.com</a> · book when in Banff</div>
+          </div>
+        </li>
+        <li>
+          <div class="check-box"></div>
+          <div>
+            <strong>Download Offline Maps</strong> — Google Maps or Maps.me
+            <div class="check-meta">Cover Banff, Icefields Parkway, Yoho NP, Golden, Rogers Pass areas</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- QUICK REF -->
+  <section id="quickref">
+    <h2><span class="section-num">6</span> Quick Reference</h2>
+    <div class="quick-ref">
+      <div class="ref-card">
+        <h4>Banff Cabin</h4>
+        <p>124 Spray Ave, Banff, AB</p>
+        <p>Check-in 3pm · Check-out 10am</p>
+      </div>
+      <div class="ref-card">
+        <h4>Golden Cabin</h4>
+        <p>606 7th St N #404</p>
+        <p>Golden, BC</p>
+      </div>
+      <div class="ref-card">
+        <h4>The Dorian Hotel</h4>
+        <p>325 4 Ave SW, Calgary, AB</p>
+        <p>June 14–15 · ~20min to YYC</p>
+      </div>
+      <div class="ref-card">
+        <h4>Rockies Journey</h4>
+        <p>rockiesjourney.ca</p>
+        <p>+1 (825) 883-3403</p>
+        <p>info@rockiesjourney.ca</p>
+      </div>
+      <div class="ref-card emergency">
+        <h4>Emergency</h4>
+        <p>Emergency: <strong>911</strong></p>
+        <p>Banff Hospital: +1 (403) 762-2222</p>
+        <p>Parks Canada: +1 (403) 762-4506</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Built with Claude Code · Canadian Rockies Family Trip · June 2026
+</footer>
+
+</body>
+</html>
