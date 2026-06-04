@@ -175,6 +175,38 @@
 
     .alltrails-link:hover { background: #27ae60; }
 
+    /* Trail condition badges */
+    .trail-cond-badge {
+      display: inline-block;
+      margin: 3px 0 0 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      vertical-align: middle;
+      line-height: 1.5;
+    }
+    .cond-ok      { background: #d4edda; color: #155724; }
+    .cond-warning { background: #fff3cd; color: #856404; }
+    .cond-danger  { background: #f8d7da; color: #721c24; }
+    .cond-loading, .cond-unknown { background: #e9ecef; color: #777; }
+    .cond-danger a, .cond-warning a, .cond-unknown a { color: inherit; text-decoration: underline; }
+
+    .conditions-bar {
+      background: #f0f7ff;
+      border: 1px solid #c5dff8;
+      border-radius: 8px;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+      color: #2d6a8a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     /* Day cards */
     .day-card {
       background: white;
@@ -543,6 +575,11 @@
   <section id="itinerary">
     <h2><span class="section-num">2</span> Day-by-Day Itinerary</h2>
 
+    <div class="conditions-bar">
+      <span id="trail-conditions-ts">Loading live trail conditions from Parks Canada…</span>
+      <a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions" target="_blank" style="font-weight:600;white-space:nowrap">Full Conditions Report ↗</a>
+    </div>
+
     <!-- DAY 1 -->
     <div class="day-card">
       <div class="day-header" style="background:#e8f4f8;">
@@ -611,7 +648,7 @@
             </tr>
             <tr>
               <td class="time-cell">6:30am</td>
-              <td><div class="activity-name">🏞 Johnston Canyon — Lower + Upper Falls</div><div class="activity-notes">5.5km · dramatic catwalks along cliff face · Lower Falls (1.2km, 25min) then continue to Upper Falls (2.8km, ~1hr) · baby in carrier · arrive before crowds<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/johnston-canyon-lower-and-upper-falls" target="_blank">Lower + Upper Falls AllTrails ↗</a><br><br><strong>Fit parent extension — Ink Pots:</strong> Continue past Upper Falls to vivid blue/green mineral springs · +6km · ~2hrs more · 11km total · worth every step if you want to skip the Icefields Parkway drive<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/ink-pots-trail" target="_blank">Ink Pots AllTrails ↗</a></div></td>
+              <td><div class="activity-name">🏞 Johnston Canyon — Lower + Upper Falls</div><div class="activity-notes">5.5km · dramatic catwalks along cliff face · Lower Falls (1.2km, 25min) then continue to Upper Falls (2.8km, ~1hr) · baby in carrier · arrive before crowds<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/johnston-canyon-lower-and-upper-falls" target="_blank" data-trail-key="johnston-canyon">Lower + Upper Falls AllTrails ↗</a><br><br><strong>Fit parent extension — Ink Pots:</strong> Continue past Upper Falls to vivid blue/green mineral springs · +6km · ~2hrs more · 11km total · worth every step if you want to skip the Icefields Parkway drive<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/ink-pots-trail" target="_blank" data-trail-key="ink-pots">Ink Pots AllTrails ↗</a></div></td>
             </tr>
             <tr>
               <td class="time-cell">8:15am</td>
@@ -655,7 +692,7 @@
             </tr>
             <tr>
               <td class="time-cell">3:15pm</td>
-              <td><div class="activity-name">🏔 Tunnel Mountain Summit</div><div class="activity-notes">4.4km loop · 300m gain · ~1.5hrs · starts 5min from cabin · excellent 360° views of Banff townsite and Bow Valley · baby in carrier · one of Meghan's top Banff town picks<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/tunnel-mountain-trail" target="_blank">AllTrails ↗</a></div></td>
+              <td><div class="activity-name">🏔 Tunnel Mountain Summit</div><div class="activity-notes">4.4km loop · 300m gain · ~1.5hrs · starts 5min from cabin · excellent 360° views of Banff townsite and Bow Valley · baby in carrier · one of Meghan's top Banff town picks<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/tunnel-mountain-trail" target="_blank" data-trail-key="tunnel-mountain">AllTrails ↗</a></div></td>
             </tr>
             <tr>
               <td class="time-cell">4:45pm</td>
@@ -716,16 +753,16 @@
           <tbody>
             <tr>
               <td class="time-cell">7:10am</td>
-              <td><div class="activity-name">⭐ Rockpile Viewpoint</div><div class="activity-notes">Short scramble · most iconic view in Canada · Valley of the Ten Peaks · baby in carrier · take your time here<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/moraine-lake-rockpile-trail" target="_blank">AllTrails ↗</a></div></td>
+              <td><div class="activity-name">⭐ Rockpile Viewpoint</div><div class="activity-notes">Short scramble · most iconic view in Canada · Valley of the Ten Peaks · baby in carrier · take your time here<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/moraine-lake-rockpile-trail" target="_blank" data-trail-key="moraine-lake-rockpile">AllTrails ↗</a></div></td>
             </tr>
             <tr>
               <td class="time-cell">7:45am</td>
               <td><div class="activity-name">⭐⭐ Morning Trail — Choose One</div><div class="activity-notes">
                 <strong>Option A — Consolation Lakes</strong> (easier · great with baby) · 5.8km · 65m gain · ~2hrs · rocky boulder field start then serene turquoise twin lakes through forest · carrier required on rocky sections<br>
-                <a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/consolation-lakes-trail" target="_blank">Consolation Lakes AllTrails ↗</a>
+                <a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/consolation-lakes-trail" target="_blank" data-trail-key="consolation-lakes">Consolation Lakes AllTrails ↗</a>
                 <br><br>
                 <strong>Option B — Larch Valley to Meadow</strong> (strenuous · max views) · ~4km up · ~350m gain · ~2.5hrs · larch forest opens to a jaw-dropping meadow above Moraine Lake · full Valley of Ten Peaks panorama · baby in carrier<br>
-                <a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/larch-valley-and-sentinel-pass" target="_blank">Larch Valley AllTrails ↗</a>
+                <a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/larch-valley-and-sentinel-pass" target="_blank" data-trail-key="larch-valley">Larch Valley AllTrails ↗</a>
               </div></td>
             </tr>
             <tr>
@@ -744,9 +781,9 @@
           <tbody>
             <tr>
               <td class="time-cell">~11:00am</td>
-              <td><div class="activity-name">🏔 Lake Louise Lakeshore Trail</div><div class="activity-notes">4km flat out-and-back · aim for the far end (2km out) for full Victoria Glacier close-up · stroller-friendly · one of the most photographed spots in Canada<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/lake-louise-lakeshore-trail" target="_blank">Lakeshore Trail AllTrails ↗</a><br><br>
+              <td><div class="activity-name">🏔 Lake Louise Lakeshore Trail</div><div class="activity-notes">4km flat out-and-back · aim for the far end (2km out) for full Victoria Glacier close-up · stroller-friendly · one of the most photographed spots in Canada<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/lake-louise-lakeshore-trail" target="_blank" data-trail-key="lake-louise-lakeshore">Lakeshore Trail AllTrails ↗</a><br><br>
               <strong>Fit parents — extend onto Plain of Six Glaciers:</strong> Continue past the lakeshore's far end up the valley as far as time allows before turning back · dramatic glacier views · go as far as legs take you<br>
-              <a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/plain-of-six-glaciers-trail" target="_blank">Plain of Six Glaciers AllTrails ↗</a></div></td>
+              <a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/plain-of-six-glaciers-trail" target="_blank" data-trail-key="plain-of-six-glaciers">Plain of Six Glaciers AllTrails ↗</a></div></td>
             </tr>
             <tr>
               <td class="time-cell">11:50am</td>
@@ -764,7 +801,7 @@
             </tr>
             <tr>
               <td class="time-cell">~1:15pm</td>
-              <td><div class="activity-name">🥾 Moraine Lake Shoreline Trail</div><div class="activity-notes">3.4km · flat · impossibly turquoise water at eye level · stroller or carrier<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/moraine-lake-shoreline-trail" target="_blank">AllTrails ↗</a></div></td>
+              <td><div class="activity-name">🥾 Moraine Lake Shoreline Trail</div><div class="activity-notes">3.4km · flat · impossibly turquoise water at eye level · stroller or carrier<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/moraine-lake-shoreline-trail" target="_blank" data-trail-key="moraine-lake-shoreline">AllTrails ↗</a></div></td>
             </tr>
             <tr>
               <td class="time-cell">~2:30pm</td>
@@ -808,7 +845,7 @@
             </tr>
             <tr>
               <td class="time-cell">6:00am</td>
-              <td><div class="activity-name">🌿 Bow River Trail</div><div class="activity-notes">Flat · stroller · peaceful morning walk · wildlife possible · great Banff farewell walk<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/bow-river-trail-banff" target="_blank">AllTrails ↗</a></div></td>
+              <td><div class="activity-name">🌿 Bow River Trail</div><div class="activity-notes">Flat · stroller · peaceful morning walk · wildlife possible · great Banff farewell walk<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/alberta/bow-river-trail-banff" target="_blank" data-trail-key="bow-river-banff">AllTrails ↗</a></div></td>
             </tr>
             <tr>
               <td class="time-cell">7:30am</td>
@@ -884,7 +921,7 @@
             </tr>
             <tr>
               <td class="time-cell">6:45am</td>
-              <td><div class="activity-name">💧 Takakkaw Falls</div><div class="activity-notes">One of Canada's tallest waterfalls (373m) · flat walk from parking · thundering cascade · jaw-dropping in morning mist · baby in carrier or stroller<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/british-columbia/takakkaw-falls-trail" target="_blank">AllTrails ↗</a></div></td>
+              <td><div class="activity-name">💧 Takakkaw Falls</div><div class="activity-notes">One of Canada's tallest waterfalls (373m) · flat walk from parking · thundering cascade · jaw-dropping in morning mist · baby in carrier or stroller<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/british-columbia/takakkaw-falls-trail" target="_blank" data-trail-key="takakkaw-falls">AllTrails ↗</a></div></td>
             </tr>
             <tr>
               <td class="time-cell">8:00am</td>
@@ -1025,7 +1062,7 @@
             </tr>
             <tr>
               <td class="time-cell">7:00am</td>
-              <td><div class="activity-name">🌿 Emerald Lake Loop</div><div class="activity-notes">5.2km flat loop · impossibly green water · mirror reflections on still morning water · stroller-friendly · one of the most beautiful lakes on earth<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/british-columbia/emerald-lake-loop" target="_blank">AllTrails ↗</a></div></td>
+              <td><div class="activity-name">🌿 Emerald Lake Loop</div><div class="activity-notes">5.2km flat loop · impossibly green water · mirror reflections on still morning water · stroller-friendly · one of the most beautiful lakes on earth<br><a class="alltrails-link" href="https://www.alltrails.com/trail/canada/british-columbia/emerald-lake-loop" target="_blank" data-trail-key="emerald-lake">AllTrails ↗</a></div></td>
             </tr>
             <tr>
               <td class="time-cell">9:15am</td>
@@ -1338,6 +1375,172 @@
       .addTo(map)
       .bindPopup('<strong>' + s.name + '</strong><br><span style="font-size:0.85em;color:#666;">' + s.day + '</span>');
   });
+</script>
+
+<script>
+// Live trail conditions — fetches Parks Canada on page load, shows badge next to each AllTrails link
+(function() {
+  var BANFF_URL = 'https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions';
+  var YOHO_URL  = 'https://parks.canada.ca/pn-np/bc/yoho/activ/randonnee-hiking/etat-sentiers-trail-conditions';
+
+  // Keywords to match Parks Canada trail names to our data-trail-key values
+  var KEYWORDS = {
+    'johnston-canyon':        ['johnston canyon'],
+    'ink-pots':               ['ink pot'],
+    'moraine-lake-rockpile':  ['rock pile', 'rockpile'],
+    'larch-valley':           ['larch valley', 'sentinel pass'],
+    'consolation-lakes':      ['consolation'],
+    'moraine-lake-shoreline': ['moraine lake shoreline'],
+    'lake-louise-lakeshore':  ['lake louise lakeshore', 'louise lakeshore'],
+    'plain-of-six-glaciers':  ['plain of six'],
+    'tunnel-mountain':        ['tunnel mountain'],
+    'bow-river-banff':        ['bow river'],
+    'takakkaw-falls':         ['takakkaw'],
+    'emerald-lake':           ['emerald lake']
+  };
+
+  // Alternative trail for each if closed/flagged
+  var ALTS = {
+    'johnston-canyon':        { n:'Bow River Trail (Banff)',           u:'https://www.alltrails.com/trail/canada/alberta/bow-river-trail-banff' },
+    'ink-pots':               { n:'Johnston Canyon Upper Falls only',  u:'https://www.alltrails.com/trail/canada/alberta/johnston-canyon-lower-and-upper-falls' },
+    'larch-valley':           { n:'Consolation Lakes (easier)',        u:'https://www.alltrails.com/trail/canada/alberta/consolation-lakes-trail' },
+    'consolation-lakes':      { n:'Larch Valley to Meadow',           u:'https://www.alltrails.com/trail/canada/alberta/larch-valley-and-sentinel-pass' },
+    'moraine-lake-rockpile':  { n:'Moraine Lake Shoreline Trail',      u:'https://www.alltrails.com/trail/canada/alberta/moraine-lake-shoreline-trail' },
+    'moraine-lake-shoreline': { n:'Consolation Lakes',                 u:'https://www.alltrails.com/trail/canada/alberta/consolation-lakes-trail' },
+    'lake-louise-lakeshore':  { n:'Bow River Loop (Lake Louise)',      u:'https://www.alltrails.com/trail/canada/alberta/lake-louise-bow-river-loop' },
+    'plain-of-six-glaciers':  { n:'Lake Louise Lakeshore (full)',      u:'https://www.alltrails.com/trail/canada/alberta/lake-louise-lakeshore-trail' },
+    'tunnel-mountain':        { n:'Vermilion Lakes Walk',              u:'https://www.alltrails.com/trail/canada/alberta/vermilion-lakes' },
+    'bow-river-banff':        { n:'Tunnel Mountain Trail',             u:'https://www.alltrails.com/trail/canada/alberta/tunnel-mountain-trail' },
+    'takakkaw-falls':         { n:'Emerald Lake Loop',                 u:'https://www.alltrails.com/trail/canada/british-columbia/emerald-lake-loop' },
+    'emerald-lake':           { n:'Natural Bridge + Yoho Valley',      u:'https://www.alltrails.com/trail/canada/british-columbia/yoho-valley-trail' }
+  };
+
+  var DANGER = ['closed','no access','road access closed','avalanche'];
+  var WARN   = ['not recommended','partially closed','caution','poor'];
+
+  function severity(s) {
+    var t = (s || '').toLowerCase();
+    if (DANGER.some(function(d) { return t.indexOf(d) > -1; })) return 'danger';
+    if (WARN.some(function(w)   { return t.indexOf(w) > -1; })) return 'warning';
+    return 'ok';
+  }
+
+  function parseConditions(html) {
+    var out = {};
+    var rows = html.match(/<tr[\s\S]*?<\/tr>/gi) || [];
+    rows.forEach(function(row) {
+      var cells = [];
+      (row.match(/<td[\s\S]*?<\/td>/gi) || []).forEach(function(td) {
+        cells.push(td.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').replace(/\.$/, '').trim());
+      });
+      if (cells.length >= 3 && cells[1] && cells[1].length > 3) {
+        out[cells[1].toLowerCase()] = { status: cells[2], comment: cells[3] || '' };
+      }
+    });
+    return out;
+  }
+
+  function findCond(all, key) {
+    var kws = KEYWORDS[key] || [];
+    var result = null;
+    Object.keys(all).forEach(function(name) {
+      if (!result && kws.some(function(k) { return name.indexOf(k) > -1; })) {
+        result = all[name];
+      }
+    });
+    return result;
+  }
+
+  function esc(s) {
+    return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function makeBadge(key, cond) {
+    var el = document.createElement('span');
+    el.className = 'trail-cond-badge';
+    if (!cond || !cond.status) {
+      el.className += ' cond-unknown';
+      el.innerHTML = '<a href="' + BANFF_URL + '" target="_blank">check conditions ↗</a>';
+      return el;
+    }
+    var sev = severity(cond.status);
+    el.className += ' cond-' + sev;
+    var note = cond.comment ? cond.comment.split(';')[0].trim() : '';
+    var alt  = ALTS[key];
+    if (sev === 'ok') {
+      el.textContent = '✓ ' + cond.status;
+    } else {
+      var html = (sev === 'danger' ? '✗ ' : '⚠ ') + esc(cond.status);
+      if (note) html += ': ' + esc(note);
+      if (alt)  html += ' &nbsp;·&nbsp; <a href="' + alt.u + '" target="_blank">Alt: ' + esc(alt.n) + ' ↗</a>';
+      el.innerHTML = html;
+    }
+    return el;
+  }
+
+  function insertAfter(newEl, refEl) {
+    refEl.parentNode.insertBefore(newEl, refEl.nextSibling);
+  }
+
+  async function fetchPage(url) {
+    // Try allorigins.win first (returns JSON wrapper)
+    try {
+      var r = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(url));
+      if (r.ok) { var d = await r.json(); if (d.contents) return d.contents; }
+    } catch(e) {}
+    // Fallback: corsproxy.io (returns raw HTML)
+    try {
+      var r2 = await fetch('https://corsproxy.io/?' + encodeURIComponent(url));
+      if (r2.ok) return await r2.text();
+    } catch(e) {}
+    return null;
+  }
+
+  async function run() {
+    var links = document.querySelectorAll('.alltrails-link[data-trail-key]');
+    if (!links.length) return;
+
+    // Show loading spinner on each link
+    links.forEach(function(a) {
+      var s = document.createElement('span');
+      s.className = 'trail-cond-badge cond-loading';
+      s.textContent = '↻';
+      insertAfter(s, a);
+    });
+
+    // Fetch both parks in parallel
+    var results = await Promise.allSettled([fetchPage(BANFF_URL), fetchPage(YOHO_URL)]);
+    var banffHtml = results[0].status === 'fulfilled' ? results[0].value : null;
+    var yohoHtml  = results[1].status === 'fulfilled' ? results[1].value : null;
+
+    var all = Object.assign(
+      {},
+      banffHtml ? parseConditions(banffHtml) : {},
+      yohoHtml  ? parseConditions(yohoHtml)  : {}
+    );
+
+    links.forEach(function(a) {
+      var badge = makeBadge(a.dataset.trailKey, findCond(all, a.dataset.trailKey));
+      var old = a.nextElementSibling;
+      if (old && old.classList.contains('trail-cond-badge')) {
+        old.parentNode.replaceChild(badge, old);
+      } else {
+        insertAfter(badge, a);
+      }
+    });
+
+    var ts = document.getElementById('trail-conditions-ts');
+    if (ts) {
+      var mt = new Date().toLocaleString('en-CA', {
+        timeZone: 'America/Edmonton', hour: '2-digit', minute: '2-digit',
+        month: 'short', day: 'numeric'
+      });
+      ts.textContent = 'Live · Updated ' + mt + ' MT · Source: Parks Canada';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', run);
+})();
 </script>
 
 </body>
